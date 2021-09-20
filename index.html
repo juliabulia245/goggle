@@ -7,11 +7,11 @@
     <title>Goggle</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body onload="setSearch()">
     <h1>Goggle</h1>
     <p>Search better |</p>
     <label for="searchInput">Search the web:</label>
-    <input type="search" id="searchInput" name="q" aria-label="Search the web">
+    <input type="search" id="searchInput" name="q" aria-label="Search the web" onkeyup="setSearch()">
     <a id="google" href="https://www.google.com/"><button>> Google</button></a>
     <a id="wikipedia" href="https://en.wikipedia.org/wiki/Main_Page"><button>> Wikipedia</button></a>
     <!--<a id="wikipediaAPI" href="https://en.wikipedia.org/wiki/Main_Page"><button>> Wikipedia (API)</button></a>-->
@@ -19,18 +19,18 @@
     <br />
     <br />
     <br />
-    
+
     <!-- <p class="tiny">Goggle helps you search more efficiently and effectively by providing direct links to search the web's most popular resources.</p> -->
     <!-- <p class="tiny">Someday, you'll be able to configure which sites to search. You'll also have more control over how your results are displayed.</p> -->
 
     <script>
-      searchInput.addEventListener('keyup', function() {
+      function setSearch() {
         searchTerm = searchInput.value;
         document.getElementById("google").href="https://www.google.com/search?q=" + searchTerm;
         document.getElementById("wikipedia").href="https://en.wikipedia.org/wiki/" + searchTerm;
         // document.getElementById("wikipediaAPI").href="https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + searchTerm;
         document.getElementById("youtube").href="https://www.youtube.com/results?search_query=" + searchTerm;
-      })
+      };
     </script>
 
   </body>
