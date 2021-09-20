@@ -15,9 +15,15 @@
     <button>> Wikipedia</button>
     <button>> Dictionary</button>
     <button>> Thesaurus</button>
+    <p>
+      <span id="testDisplay"></span>
+    </p>
 
     <script>
-    searchTerms = mySearch.value;
+      mySearch.addEventListener('keyup', function() {
+      searchTerm = mySearch.value;
+      document.getElementById('testDisplay').innerHTML = searchTerm;
+      })
     </script>
 
   </body>
