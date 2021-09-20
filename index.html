@@ -7,7 +7,7 @@
     <title>Goggle</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body onload="setSearch()">
+  <body onload="getSearch()">
     <h1>Goggle</h1>
     <p>Search better |</p>
     <label for="searchInput">Search the web:</label>
@@ -24,12 +24,20 @@
     <!-- <p class="tiny">Someday, you'll be able to configure which sites to search. You'll also have more control over how your results are displayed.</p> -->
 
     <script>
+      function getSearch() {
+        if (localStorage.getItem("searchInput") !== null){
+          searchInput.value = localStorage.getItem("searchInput");
+        }
+        setSearch();
+      }
+
       function setSearch() {
         searchTerm = searchInput.value;
         document.getElementById("google").href="https://www.google.com/search?q=" + searchTerm;
         document.getElementById("wikipedia").href="https://en.wikipedia.org/wiki/" + searchTerm;
         // document.getElementById("wikipediaAPI").href="https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + searchTerm;
         document.getElementById("youtube").href="https://www.youtube.com/results?search_query=" + searchTerm;
+        localStorage.setItem("searchInput", searchTerm);
       };
     </script>
 
