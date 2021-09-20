@@ -3,6 +3,7 @@ Search better |
 
 ## Purpose
 Quicker searching, not having to scroll past ads and irrelevent search results.
+Eliminate distracting suggestions and search results.
 
 ## Problem Example
 Searching Google for 'hermes' yields the following SERP:

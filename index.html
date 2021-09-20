@@ -9,20 +9,20 @@
   </head>
   <body>
     <h1>Goggle</h1>
-    <label for="search-term">Search the web:</label>
-    <input type="search" id="search-term" name="query" aria-label="Search the web">
-    <button>> Google</button>
-    <button>> Wikipedia</button>
-    <button>> Dictionary</button>
-    <button>> Thesaurus</button>
-    <p>
-      <span id="testDisplay">Test</span>
-    </p>
+    <label for="searchInput">Search the web:</label>
+    <input type="search" id="searchInput" name="q" aria-label="Search the web">
+    <a id="google" href="https://www.google.com/"><button>> Google</button></a>
+    <a id="wikipedia" href="https://en.wikipedia.org/wiki/Main_Page"><button>> Wikipedia</button></a>
+    <!--<a id="wikipediaAPI" href="https://en.wikipedia.org/wiki/Main_Page"><button>> Wikipedia (API)</button></a>-->
+    <a id="youtube" href="https://www.youtube.com/"><button>> YouTube</button></a>
 
     <script>
-      mySearch.addEventListener('keyup', function() {
-      searchTerm = mySearch.value;
-      document.getElementById('testDisplay').innerHTML = searchTerm;
+      searchInput.addEventListener('keyup', function() {
+        searchTerm = searchInput.value;
+        document.getElementById("google").href="https://www.google.com/search?q=" + searchTerm;
+        document.getElementById("wikipedia").href="https://en.wikipedia.org/wiki/" + searchTerm;
+        // document.getElementById("wikipediaAPI").href="https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + searchTerm;
+        document.getElementById("youtube").href="https://www.youtube.com/results?search_query=" + searchTerm;
       })
     </script>
 
